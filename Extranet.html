@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R∴L∴S∴ Géminis N° 173 — Extranet</title>
+<link rel="icon" type="image/png" href="Logoo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a href="index.html" class="marca">
+      <span class="marca__emblema" aria-hidden="true">
+        <img src="Logoo.png" alt="Logo R∴L∴S∴ Géminis 173" class="marca__logo">
+      </span>
+      <span class="marca__texto">
+        <strong>R∴L∴S∴ Géminis</strong>
+        <small>N° 173</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="logia.html">La Logia</a>
+      <a href="principios.html">Principios</a>
+      <a href="actividades.html">Actividades</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="extranet.html" class="activo" aria-current="page">Extranet</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="extranet" id="extranet" style="padding-top:4.5rem;">
+  <div class="contenedor extranet__cont">
+    <div class="extranet__intro revelar">
+      <p class="eyebrow eyebrow--claro">Acceso reservado</p>
+      <h2 class="titulo titulo--claro">Extranet de miembros</h2>
+      <p>Área privada para la gestión interna de la Logia: registro de boletas, tesorería y administración. El acceso está reservado a los miembros autorizados.</p>
+      <p class="extranet__nota">Si tienes problemas para ingresar, comunícate con el Secretario o el Tesorero de la Logia.</p>
+    </div>
+
+    <div class="extranet__panel revelar">
+      <div class="tabs" role="tablist">
+        <button class="tab activo" id="tabTesorero" role="tab" aria-selected="true" data-panel="panelTesorero">Tesorero</button>
+        <button class="tab" id="tabAdmin" role="tab" aria-selected="false" data-panel="panelAdmin">Administrador</button>
+      </div>
+
+      <form class="panel-acc activo" id="panelTesorero" action="login.php" method="POST">
+        <label>Correo
+          <input type="email" name="correo" placeholder="correo@ejemplo.com" required>
+        </label>
+        <label>Contraseña
+          <input type="password" name="password" placeholder="••••••••" required>
+        </label>
+        <button type="submit" class="boton boton--oro boton--bloque">Entrar como Tesorero</button>
+        <a href="recuperar.php" class="enlace-fino">¿Olvidaste tu contraseña?</a>
+      </form>
+
+      <div class="panel-acc" id="panelAdmin">
+        <p class="panel-acc__texto">El ingreso de Administrador se realiza en su propio módulo seguro.</p>
+        <a href="login_admin.php" class="boton boton--oscuro boton--bloque">Entrar como Administrador</a>
+        <a href="recuperar.php" class="enlace-fino">¿Olvidaste tu contraseña?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <div class="pie__marca">
+      <strong>R∴L∴S∴ Géminis N° 173</strong>
+      <span>Libertad · Igualdad · Fraternidad</span>
+    </div>
+    <nav class="pie__nav" aria-label="Navegación del pie">
+      <a href="logia.html">La Logia</a>
+      <a href="principios.html">Principios</a>
+      <a href="actividades.html">Actividades</a>
+      <a href="extranet.html">Extranet</a>
+    </nav>
+  </div>
+  <div class="contenedor pie__base">
+    <span id="anio"></span> · Respetable Logia Simbólica Géminis N° 173. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
