@@ -1,0 +1,288 @@
+/* =========================================================
+   R∴L∴S∴ Géminis N° 173 — Hoja de estilos
+   ========================================================= */
+
+:root{
+  --azul-profundo:#0e1c39;
+  --azul-medio:#1c3559;
+  --oro:#c4a052;
+  --oro-claro:#dcc187;
+  --marfil:#f7f4ec;
+  --marfil-2:#efeae0;
+  --tinta:#1a1d24;
+  --gris:#5c6470;
+  --linea:rgba(14,28,57,.12);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,Arial,sans-serif;
+  color:var(--tinta);
+  background:var(--marfil);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+
+.contenedor{
+  width:min(1120px,92%);
+  margin-inline:auto;
+}
+
+/* ---------- Tipografía base ---------- */
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--oro);
+  font-weight:600;
+  margin:0 0 .6rem;
+}
+.eyebrow--claro{color:var(--oro-claro);}
+.titulo{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(1.9rem,3.4vw,2.8rem);
+  line-height:1.12;
+  margin:0 0 1.2rem;
+  letter-spacing:.01em;
+}
+.titulo--claro{color:#fff;}
+
+/* ---------- Botones ---------- */
+.boton{
+  display:inline-block;
+  padding:.85rem 1.7rem;
+  font-size:.86rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-radius:2px;
+  transition:transform .2s,background .2s,color .2s,border-color .2s;
+}
+.boton:hover{transform:translateY(-2px);}
+.boton--oro{background:var(--oro);color:var(--azul-profundo);}
+.boton--oro:hover{background:var(--oro-claro);}
+.boton--oscuro{background:var(--azul-profundo);color:#fff;}
+.boton--oscuro:hover{background:var(--azul-medio);}
+.boton--linea{border:1px solid var(--oro);color:var(--azul-profundo);}
+.boton--linea:hover{background:var(--oro);color:var(--azul-profundo);}
+.boton--bloque{width:100%;text-align:center;}
+
+/* ---------- Encabezado ---------- */
+.cabecera{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,244,236,.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--linea);
+  transition:box-shadow .3s;
+}
+.cabecera.encogido{box-shadow:0 6px 24px rgba(14,28,57,.1);}
+.cabecera__fila{
+  display:flex;align-items:center;justify-content:space-between;
+  height:74px;
+}
+.marca{display:flex;align-items:center;gap:.7rem;color:var(--azul-profundo);}
+.marca__emblema{color:var(--oro);display:flex;}
+.marca__texto{display:flex;flex-direction:column;line-height:1;}
+.marca__texto strong{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-weight:600;letter-spacing:.02em;
+}
+.marca__texto small{
+  font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gris);margin-top:3px;
+}
+
+.nav{display:flex;align-items:center;gap:1.9rem;}
+.nav a{
+  font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  color:var(--tinta);position:relative;padding:.3rem 0;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:0;
+  width:0;height:1.5px;background:var(--oro);transition:width .25s;
+}
+.nav a:hover::after{width:100%;}
+
+.menu-btn{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:6px;
+}
+.menu-btn span{width:24px;height:2px;background:var(--azul-profundo);transition:.3s;}
+.menu-btn.activo span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-btn.activo span:nth-child(2){opacity:0;}
+.menu-btn.activo span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ---------- Portada ---------- */
+.portada{
+  position:relative;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(196,160,82,.16),transparent 55%),
+    linear-gradient(160deg,var(--azul-profundo),#0a142a 70%);
+  color:#fff;
+  text-align:center;
+  padding:6.5rem 0 7rem;
+  overflow:hidden;
+}
+.portada__velo{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(circle at 50% 40%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 30%,transparent 75%);
+  pointer-events:none;
+}
+.portada__cont{position:relative;z-index:1;}
+.portada__emblema{color:var(--oro-claro);display:flex;justify-content:center;margin-bottom:1.4rem;animation:aparecer 1s ease both;}
+.portada__eyebrow{
+  font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--oro-claro);margin:0 0 1rem;
+}
+.portada__titulo{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(2.4rem,6vw,4.2rem);
+  line-height:1.07;
+  margin:0 0 1.1rem;
+}
+.portada__lema{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1.1rem,2.4vw,1.5rem);
+  color:var(--oro-claro);
+  letter-spacing:.04em;
+  margin:0 0 1.4rem;
+}
+.portada__intro{
+  max-width:620px;margin:0 auto 2.3rem;
+  color:rgba(255,255,255,.8);font-size:1.02rem;
+}
+.portada__acciones{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* ---------- Secciones ---------- */
+.seccion{padding:5.5rem 0;}
+.seccion--alt{background:var(--marfil-2);}
+.seccion__cab{text-align:center;max-width:640px;margin:0 auto 3rem;}
+
+/* La Logia */
+.reja{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:3.5rem;align-items:start;
+}
+.reja__texto p{color:var(--gris);margin:0 0 1.1rem;}
+.ficha{list-style:none;margin:0;padding:2rem;background:#fff;border-top:3px solid var(--oro);box-shadow:0 18px 40px rgba(14,28,57,.07);}
+.ficha li{display:flex;flex-direction:column;padding:.9rem 0;border-bottom:1px solid var(--linea);}
+.ficha li:last-child{border-bottom:none;}
+.ficha span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);}
+.ficha strong{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;}
+
+/* Principios */
+.tarjetas{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.tarjeta{
+  background:#fff;padding:2.2rem 1.7rem;border-radius:3px;
+  border:1px solid var(--linea);
+  transition:transform .25s,box-shadow .25s;
+}
+.tarjeta:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(14,28,57,.1);}
+.tarjeta__num{
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--oro);
+  display:block;margin-bottom:.6rem;
+}
+.tarjeta h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin:0 0 .6rem;}
+.tarjeta p{color:var(--gris);font-size:.94rem;margin:0;}
+
+/* Actividades */
+.notas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.nota{padding:1.9rem;background:#fff;border-left:3px solid var(--oro);box-shadow:0 14px 32px rgba(14,28,57,.06);}
+.nota time{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro);font-weight:600;}
+.nota h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;margin:.5rem 0 .6rem;}
+.nota p{color:var(--gris);font-size:.92rem;margin:0;}
+
+/* ---------- Extranet ---------- */
+.extranet{
+  background:linear-gradient(160deg,var(--azul-profundo),#0a142a);
+  color:#fff;padding:5.5rem 0;
+}
+.extranet__cont{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+.extranet__intro p{color:rgba(255,255,255,.78);margin:0 0 1.1rem;}
+.extranet__nota{font-size:.88rem;color:rgba(255,255,255,.55)!important;}
+
+.extranet__panel{
+  background:#fff;color:var(--tinta);
+  border-radius:6px;padding:2.4rem;border-top:4px solid var(--oro);
+  box-shadow:0 30px 70px rgba(0,0,0,.3);
+}
+.tabs{display:flex;gap:.4rem;margin-bottom:1.6rem;background:var(--marfil-2);padding:4px;border-radius:4px;}
+.tab{
+  flex:1;padding:.7rem;border:none;background:none;cursor:pointer;
+  font-family:inherit;font-size:.84rem;font-weight:600;letter-spacing:.04em;
+  color:var(--gris);border-radius:3px;transition:background .2s,color .2s;
+}
+.tab.activo{background:#fff;color:var(--azul-profundo);box-shadow:0 2px 8px rgba(14,28,57,.1);}
+
+.panel-acc{display:none;flex-direction:column;}
+.panel-acc.activo{display:flex;animation:aparecer .3s ease both;}
+.panel-acc label{font-size:.8rem;font-weight:600;color:var(--azul-profundo);margin-bottom:.9rem;display:flex;flex-direction:column;gap:.4rem;}
+.panel-acc input{
+  padding:.8rem .9rem;border:1px solid #cbd5e1;border-radius:4px;
+  font-size:.95rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;
+}
+.panel-acc input:focus{outline:none;border-color:var(--oro);box-shadow:0 0 0 3px rgba(196,160,82,.18);}
+.panel-acc__texto{color:var(--gris);font-size:.92rem;margin:.2rem 0 1.3rem;}
+.panel-acc .boton{margin-top:.4rem;}
+.enlace-fino{display:block;text-align:center;margin-top:1rem;font-size:.84rem;color:var(--azul-medio);}
+.enlace-fino:hover{color:var(--oro);text-decoration:underline;}
+
+/* ---------- Contacto ---------- */
+.contacto{text-align:center;max-width:600px;margin-inline:auto;}
+.contacto p{color:var(--gris);margin:0 0 1.6rem;}
+
+/* ---------- Pie ---------- */
+.pie{background:var(--azul-profundo);color:#fff;padding:3rem 0 1.8rem;}
+.pie__fila{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-bottom:1.6rem;border-bottom:1px solid rgba(255,255,255,.12);}
+.pie__marca{display:flex;flex-direction:column;}
+.pie__marca strong{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;}
+.pie__marca span{font-size:.78rem;letter-spacing:.16em;color:var(--oro-claro);margin-top:.2rem;}
+.pie__nav{display:flex;gap:1.6rem;flex-wrap:wrap;}
+.pie__nav a{font-size:.84rem;color:rgba(255,255,255,.75);}
+.pie__nav a:hover{color:var(--oro-claro);}
+.pie__base{margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.5);text-align:center;}
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.revelar{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.revelar.visible{opacity:1;transform:translateY(0);}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:900px){
+  .reja,.extranet__cont{grid-template-columns:1fr;gap:2.5rem;}
+  .tarjetas{grid-template-columns:repeat(2,1fr);}
+  .notas{grid-template-columns:1fr;}
+}
+@media (max-width:720px){
+  .menu-btn{display:flex;}
+  .nav{
+    position:absolute;top:74px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--marfil);border-bottom:1px solid var(--linea);
+    padding:.5rem 6%;
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .nav.abierto{max-height:420px;}
+  .nav a{padding:.9rem 0;border-bottom:1px solid var(--linea);}
+  .tarjetas{grid-template-columns:1fr;}
+  .seccion{padding:4rem 0;}
+  .portada{padding:4.5rem 0 5rem;}
+}
+
+/* ---------- Accesibilidad ---------- */
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px;}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto;}
+  .revelar{opacity:1;transform:none;}
+}
